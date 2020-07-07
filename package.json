@@ -1,0 +1,7 @@
+{
+    "name": "alura-django",
+    "author": "phelipecomph",
+    "dependencies": {
+      "django":"^3.0.8"
+    }
+  }
