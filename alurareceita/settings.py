@@ -55,7 +55,7 @@ ROOT_URLCONF = 'alurareceita.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'receitas/templates')], #Pasta de Templates apontada como Base_DIR
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,4 +118,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') #Onde Django vai criar a pasta de arquivos estaticos
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [ #Todas as pastas de arquivos estaticos
+    os.path.join(BASE_DIR, 'alurareceita/static') #Pasta de arquivos estaticos do projeto
+]
+#Depois de apontar as pastas dos arquivos estaticos foi pedido pro django registrar os arquivos estatico (python manage.py collectstatic)
